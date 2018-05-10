@@ -674,3 +674,5 @@ Here is a preview of Redux actions and reducer:
     * JavaScript
     * HTML
     * CSS
+
+6. Read about arrow functions in [Understanding ECMAScript 6](https://leanpub.com/understandinges6/read) by Nicholas C. Zakas
