@@ -9,7 +9,7 @@ In a Terminal window:
     * the working directory that you will make in step 3
 2. `git clone https://github.com/pedrottimark/ts-weeks-2018.git`
 3. make a working directory outside of the cloned directory
-4. `cp -R ts-weeks/a-1 path-to-your-working-directory`
+4. `cp -R ts-weeks-2018/a-1 path-to-your-working-directory`
 5. change directory to your copy of `a-1` subdirectory in working directory
 6. `yarn`
 7. `cd a-1`
