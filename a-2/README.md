@@ -112,6 +112,8 @@ In the `src/04-array-reduce.spec.js` file, **take turns** with two `describe` bl
 
 ## function closure, part 1
 
+A **closure** is a function that accesses data outside its own scope (that is, its arguments plus variables declared in its body).
+
 If a function **returns a function**, when you call the returned function, its body can refer to **arguments** of the outer function.
 
 For example, the body of the inner function refers to `nDigits` of the outer function:
@@ -171,6 +173,8 @@ const createSet = () => {
 The [`Object.create`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create) method creates a new object with no prototype methods if `null` is the argument.
 
 Will a volunteer explain what difference with and without prototype makes in the last test case of the two describe blocks.
+
+**Bonus**: Read [Sets and Maps](https://leanpub.com/understandinges6/read#leanpub-auto-sets-and-maps) by Nicholas C. Zakas
 
 ## prototype
 
@@ -508,7 +512,7 @@ Unlike array destructuring, the variable names must match the property keys.
 
 ## array spread
 
-In an array literal, the ... **spread operator** means “spread out” the values of an iterable, especially an array.
+In an array literal, the ... [spread operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax) means “spread out” the values of an iterable, especially an array.
 
 Here is an analogy of spreading out cards of each suit into a hand:
 
@@ -535,9 +539,28 @@ We still recommend array methods with callback functions, like `filter`, `map`, 
 2. In your code editor, open the `src/16-array-spread.spec.js` file
 3. **Each individually**, comment out `return` statement following `// TODO` comment, and then rewrite with array spread operator instead of array `concat` method
 
+## rest parameter
+
+You can also “spread out” items in an array as arguments in a function **call**:
+
+```js
+const element = React.createElement(type, props, ...children);
+```
+
+A **rest parameter** preceded by `...` is an argument in a function **definition** which becomes an array of zero or more items which are the rest of its arguments:
+
+```js
+const React = {
+    createElement(type, props, ...children) {
+        // scope of method body includes:
+        // type, props, and the rest of its arguments as an array of zero or more children
+    }
+};
+```
+
 ## object spread
 
-In an object literal, ES2018 includes `...` **spread operator** for properties. It works in Node.js 8.6.0, Firefox 55, Chrome 60, Safari 11.1, but not Edge 17.
+In an object literal, ES2018 includes `...` [spread operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax) for properties. It works in Node.js 8.6.0, Firefox 55, Chrome 60, Safari 11.1, but not Edge 17.
 
 The object literal implies a new object instance, therefore immutable data.
 
@@ -558,11 +581,15 @@ Will a volunteer say which ES2015 notation you see in the `replaceText` function
 
 ## function bind
 
-TODO interactive application
+The [`addEventListener`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener) method adds a function to be called when the specified event occurs at the target element.
 
-TODO The [`addEventListener`](https://developer.mozilla.org/en-US/docs/Web/API/Element/addEventListener) method DOES WHAT.
+The [`'click'`](https://developer.mozilla.org/en-US/docs/Web/Events/click) event occurs when the pointing device button is pressed and released.
 
-TODO The function [`bind`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind) method DOES WHAT.
+The function [`bind`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind) method creates a new function that, when called:
+* `this` is set to the first argument, which is `null` if context is not relevant
+* has any additional arguments preceding any in the function call
+
+When you render an array of objects as a list of items, the callback function needs the `id` of the data item which corresponds to the item element that is clicked.
 
 1. In your code editor, open the `src/18-function-bind.html` file, and see the following elements:
     * `<style>…</style>`
@@ -573,10 +600,14 @@ TODO The function [`bind`](https://developer.mozilla.org/en-US/docs/Web/JavaScri
 4. Click items and verify the expected output in the Console pane
 5. **Both collaboratively** in the `src/18-function-bind.js` file:
     * Comment out `li.addEventListener('click', () => { onClick(id); });`
-    * Rewrite the line with function `bind` method
+    * Rewrite the line with function `bind` method in the second argument: `onClick.bind(null, id)`
     * Save your change
 6. Refresh the browser tab which displays the `src/18-function-bind.html` file
 7. Click items and verify the expected output in the Console pane
+
+Will a volunteer explain how the original callback worked with arrow function.
+
+Will another volunteer explain how the rewritten callback works with bound function.
 
 **Bonus**: View [When and how to bind callback methods](https://speakerdeck.com/pedrottimark/bind-callback-methods-at-triadjs) by pedrottimark
 
@@ -585,14 +616,20 @@ TODO The function [`bind`](https://developer.mozilla.org/en-US/docs/Web/JavaScri
 1. In Terminal: `yarn test 19-react-elements-as-markup`
 2. In your code editor, open the `src/19-react-elements-as-markup.spec.js` file
 
-**Bonus**: Read pages 99–104 [Symbols](https://leanpub.com/understandinges6/read#leanpub-auto-symbols-and-symbol-properties) by Nicholas C. Zakas
+**Bonus**: Read [React Components, Elements, and Instances](https://reactjs.org/blog/2015/12/18/react-components-elements-and-instances.html) by Dan Abramov
 
 ## React elements as objects
+
+A [symbol](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol) can represent a **unique identifier**. Symbols are the only primitive types in JavaScript which don’t have a literal form. To create a symbol, call the `Symbol()` function.
+
+Here is an example of a **shared** symbol: `Symbol.for('react.element')` with a string identifier as argument.
+
+Because JSON doesn’t support symbols, React elements have a `$$typeof: Symbol.for('react.element')` property to safely distinguish them from plain objects in untrusted JSON.
 
 1. In Terminal: `yarn test 20-react-elements-as-objects`
 2. In your code editor, open the `src/20-react-elements-as-objects.spec.js` file
 
-**Bonus**: Read [React Components, Elements, and Instances](https://reactjs.org/blog/2015/12/18/react-components-elements-and-instances.html) by Dan Abramov
+**Bonus**: Read pages 99–104 [Symbols](https://leanpub.com/understandinges6/read#leanpub-auto-symbols-and-symbol-properties) by Nicholas C. Zakas
 
 ## Application
 

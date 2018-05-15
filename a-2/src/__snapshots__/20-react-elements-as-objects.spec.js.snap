@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`React elements as objects escapes angle brackets in text 1`] = `
+Object {
+  "$$typeof": Symbol(react.element),
+  "_owner": null,
+  "_store": Object {},
+  "key": null,
+  "props": Object {
+    "children": "<script src=\\"do-do.js\\"></script>",
+    "className": "uncompleted",
+  },
+  "ref": null,
+  "type": "li",
+}
+`;
+
+exports[`React elements as objects represents an element with number as child 1`] = `
+Object {
+  "$$typeof": Symbol(react.element),
+  "_owner": null,
+  "_store": Object {},
+  "key": null,
+  "props": Object {
+    "children": 17,
+  },
+  "ref": null,
+  "type": "td",
+}
+`;
+
+exports[`React elements as objects represents an element with text and elements as children 1`] = `
+Object {
+  "$$typeof": Symbol(react.element),
+  "_owner": null,
+  "_store": Object {},
+  "key": null,
+  "props": Object {
+    "children": Array [
+      "Just",
+      Object {
+        "$$typeof": Symbol(react.element),
+        "_owner": null,
+        "_store": Object {},
+        "key": null,
+        "props": Object {
+          "children": "do",
+        },
+        "ref": null,
+        "type": "strong",
+      },
+      " it!",
+    ],
+  },
+  "ref": null,
+  "type": "li",
+}
+`;
+
+exports[`React elements as objects represents an empty element with no props 1`] = `
+Object {
+  "$$typeof": Symbol(react.element),
+  "_owner": null,
+  "_store": Object {},
+  "key": null,
+  "props": Object {},
+  "ref": null,
+  "type": "br",
+}
+`;
+
+exports[`React elements as objects represents an empty element with two props 1`] = `
+Object {
+  "$$typeof": Symbol(react.element),
+  "_owner": null,
+  "_store": Object {},
+  "key": null,
+  "props": Object {
+    "src": "pretty.jpeg",
+    "title": "pretty picture",
+  },
+  "ref": null,
+  "type": "img",
+}
+`;
