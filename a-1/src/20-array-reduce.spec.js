@@ -20,7 +20,7 @@ describe('get next id', function () {
     const idNext = function (items) {
         return items.reduce(function (id, item) {
             /*
-            if (/* condition */) {
+            if () { // TODO if what
                 // TODO return what
             }
             */
@@ -32,14 +32,14 @@ describe('get next id', function () {
         // TODO
     });
     it('returns initial value even if item has lesser id', function () {
-        const items = {completed: false, id: -7, text: 'Do what?'};
+        const items = [{completed: false, id: -7, text: 'Do what?'}];
 
         expect(idNext(items)).toBe(idInitial);
     });
     it('returns minimum value for non-empty array', function () {
         const item0 = {completed: true, id: 2, text: 'I done it.'};
         const item1 = {completed: false, id: 4, text: 'Just do it!'};
-        const text2 = {completed: false, id: 6, text: 'To do, or not to do?'};
+        const item2 = {completed: false, id: 6, text: 'To do, or not to do?'};
         const items = [item0, item1, item2];
 
         expect(idNext(items)).toBe(7);

@@ -10,7 +10,7 @@ describe('find', function () {
     };
 
     it('finds item', function () {
-        expect(find(items, 2)).toBe(item1);
+        expect(find(items, 2)).toBe(item0);
     });
     it('does not find item', function () {
         expect(find(items, -7)).toBe(undefined);
@@ -24,9 +24,9 @@ describe('findIndex', function () {
     };
 
     it('finds item', function () {
-        expect(findIndex(items, 2)).toBe(1);
+        expect(findIndex(items, 2)).toBe(0);
     });
     it('does not find item', function () {
-        expect(find(items, -7)).toBe(-1);
+        expect(findIndex(items, -7)).toBe(-1);
     });
 });

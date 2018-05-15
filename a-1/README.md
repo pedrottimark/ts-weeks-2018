@@ -218,7 +218,12 @@ Will four volunteers each say one of the following:
 3. the **value** of item at index `3` in array `[1, 2, 3]`
 4. the **value** of item at index `0` in array `[1, 2, 3]`
 
-Because `typeof` operator doesn’t distinguish object from array, ES2015 provides an `Array.isArray` method:
+Because `typeof` operator doesn’t distinguish object from array, ES2015 provides an `Array.isArray` method.
+
+```js
+const trueItIsAnArray = Array.isArray([]);
+const falseItIsNotAnArray = Array.isArray({});
+```
 
 1. In your code editor, open the `src/06-array.js` file
 2. In Terminal: `yarn test 06-array`
@@ -307,8 +312,8 @@ Will a volunteer explain the difference between **shallow** and **deep** equalit
 
 For our next **practice**, create a `src/07b-pure-function.spec.js` file:
 
-* in pairs, write a `describe` block with 3 tests for `isCompleted` function
-* change roles, and the write another `describe` block with 3 tests for `isUncompleted` function
+* in pairs, write a `describe` block with 3 tests for `toggleCompleted` function
+* change roles, and the write another `describe` block with 3 tests for `toggleUncompleted` function
 
 ## Object.assign
 
