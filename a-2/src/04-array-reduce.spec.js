@@ -1,4 +1,4 @@
-describe('accumulate sum of items', () => {
+describe('accumulate sum (addition) of items', () => {
     const addItems = items => items.reduce((sum, item) => /* TODO */, 0);
 
     it('returns 0 as sum of empty array', function () {

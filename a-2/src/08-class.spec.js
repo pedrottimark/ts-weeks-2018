@@ -1,6 +1,5 @@
 const ELEMENT_NODE = 1;
 const TEXT_NODE = 3;
-const COMMENT_NODE = 8;
 
 function Element(tagName) {
     this.tagName = tagName.toUpperCase();
@@ -40,7 +39,7 @@ Element.prototype.nodeType = ELEMENT_NODE;
 const createElement = tagName => new Element(tagName);
 
 class TextNode {
-    constructor (data) {
+    constructor(data) {
         this.data = data;
     }
 }

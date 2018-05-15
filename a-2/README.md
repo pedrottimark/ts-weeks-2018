@@ -115,9 +115,11 @@ In the `src/04-array-reduce.spec.js` file, **take turns** with two `describe` bl
 1. Write test cases for empty and non-empty arrays
 2. At `/* TODO */` comment, write the implicitly returned value of the callback function
 
+**Both together**, copy and paste the first `describe` block, and then adapt from sum (addition) to product (multiplication).
+
 ## function closure, part 1
 
-A **closure** is a function that accesses data outside its own scope (that is, its arguments plus variables declared in its body).
+A **closure** is a function that accesses data outside its own scope (that is, outside its arguments plus variables declared in its body).
 
 If a function **returns a function**, when you call the returned function, its body can refer to **arguments** of the outer function.
 
@@ -175,7 +177,11 @@ const createSet = () => {
 1. In your code editor, open the `src/06-closure-var.spec.js` file
 2. In Terminal: `yarn test 06-closure-var`
 
-The [`Object.create`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create) method creates a new object with no prototype methods if `null` is the argument.
+The [`Object.create`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create) method creates a new object with no prototype methods if `null` is the argument:
+
+```js
+const object = Object.create(null);
+```
 
 Will a volunteer explain what difference with and without prototype makes in the last test case of the two describe blocks.
 
@@ -188,7 +194,7 @@ Will a volunteer explain what difference with and without prototype makes in the
 * DOM has a tree structure of **nodes**, including elements, text, and comments.
 * Each node corresponds to an **object** which has methods and properties.
 * A parent element has an **array-like** object of child nodes, also known as siblings.
-* The [attributes](https://developer.mozilla.org/en-US/docs/Web/API/Element/attributes) of an element in HTML or SVG are an **array-like** object whose items are objects with `name` and `value` properties.
+* The [attributes](https://developer.mozilla.org/en-US/docs/Web/API/Element/attributes) of an element are an **array-like** object whose items are objects with `name` and `value` properties.
 
 For an example of object-oriented JavaScript, we will emulate text and element objects.
 
@@ -225,6 +231,7 @@ function TextNode (data) {
 
 TextNode.prototype.nodeType = TEXT_NODE;
 
+// A virtual constructor function encapsulates how to create object instances.
 const createTextNode = data => new TextNode(data);
 ```
 
@@ -283,6 +290,12 @@ In the `src/07-prototype.spec.js` file, do each of the following, and then rerun
     */
     ```
 
+Will a volunteer say what value the `setAttribute` method returns and why:
+* if it returns from `for` loop
+* if the `for` loop iterates through all attributes
+
+**Bonus**: Search [Mozilla Developer Network](https://developer.mozilla.org) to see if it is possible to stop iteration from the callback function of array `forEach` method.
+
 ## class
 
 A `class` definition encapsulates the constructor and its prototype methods.
@@ -302,7 +315,7 @@ Here is the corresponding class definition with `constructor` keyword:
 
 ```js
 class TextNode {
-    constructor (data) {
+    constructor(data) {
         this.data = data;
     }
 }
@@ -340,6 +353,9 @@ class Element {
 
 Will a volunteer explain the idiom with `&&` conditional and operator.
 
+* Like a function declaration, a concise method does **not** end with semicolon.
+* Unlike a concise method in an object, a concise method in a class does **not** end with comma.
+
 In the `src/08-class.spec.js` file, **both collaboratively**:
 
 1. Convert the `Element` constructor to  the corresponding class definition with `constructor` keyword.
@@ -352,8 +368,8 @@ In the `src/08-class.spec.js` file, **both collaboratively**:
 
 A **props** object in React corresponds to an array of attribute objects in HTML:
 
-* The **key** of the prop in React is the **name** of the attribute object in HTML.
-* The **value** of the prop in React is the **value** of the attribute object in HTML.
+* The **key** of the prop is the value of the **name** property in the attribute object.
+* The **value** of the prop is the value of the **value** property in the attribute object.
 
 ```js
 const attributesInHTML = [
@@ -374,7 +390,7 @@ const propsInReact = {
 
 For information about a few differences between HTML attributes like `class` and React props like `className` see [Differences in Attributes](https://reactjs.org/docs/dom-elements.html#differences-in-attributes)
 
-## Object.keys and array map
+## Object.keys and array methods
 
 An array has `length` property for number of items, but an object doesn’t for number of properties.
 
@@ -386,7 +402,7 @@ Will a volunteer say how to get the number of properties of an object.
 2. In your code editor, open the `src/10-props-to-attributes.spec.js` file, and then:
 3. **Each individually**, convert `toAttributes` to an arrow function
 4. **Each individually**, convert `map` method callback to an arrow function
-5. **Both collaboratively**, use array [`sort`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort) method in the `toAttributes` function and delete `.not` in assertion of last test, so that the array does consist of attributes in **ascending order by name**.
+5. **Both collaboratively**, chain a call to array [`sort`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort) method **preceding** the `map` method in the `toAttributes` function and delete `.not` in assertion of last test, so that the array does consist of attributes in **ascending order by name**.
 
 Will a volunteer say what are the pros and cons of sorting or not sorting properties by keys.
 
