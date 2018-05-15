@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`item renders an item with HTML entity references 1`] = `
+<li
+  class="uncompleted"
+>
+  <script
+    src="do-do.js"
+  />
+</li>
+`;
+
+exports[`item renders an item with completed property false 1`] = `
+<li
+  class="uncompleted"
+>
+  Just do it!
+</li>
+`;
+
+exports[`item renders an item with completed property true 1`] = `
+<li
+  class="completed"
+>
+  I done it.
+</li>
+`;
