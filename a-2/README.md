@@ -14,7 +14,7 @@ Concise notations help you separate:
 
 In a Terminal window:
 
-1. move to the directory into which you cloned the `ts-weeks-2018` repository
+1. move to the `ts-weeks-2018` directory into which you cloned the repository
 2. `git pull`
 3. remember the location of your working directory in which you edit a copy of practice files
 4. `cp -R a-2 path-to-your-working-directory`
@@ -31,11 +31,16 @@ In your code editor, open your copy of `a-2` subdirectory in working directory
 
 ## arrow functions, part 1
 
-To convert a function literal to an **arrow function** literal:
+What are functions made of?
+* arguments are **input**
+* body does **work**
+* return value is **output**
+
+To convert a function literal to an arrow function literal:
 
 * Always delete `function` keyword.
-* Always insert `=>` between arguments and body or result.
-* If only one argument, most people delete parentheses. You will see an exception later.
+* Always insert `=>` between the arguments-**input** and the body-**work** or implicit return-**output**.
+* If only one argument, most people delete parentheses. Later, you will see an exception when you can’t.
 * If body consists only of a `return` statement, delete braces and `return` keyword.
 
 | arguments | return | function literal | arrow function literal |
@@ -83,7 +88,7 @@ export const prependItem1 = item => {
     array = [item].concat(array);
 };
 
-export const prependItem2 = value =>
+export const prependItem2 = item =>
     array = [item].concat(array);
 ```
 
@@ -609,31 +614,49 @@ Will a volunteer explain how the original callback worked with arrow function.
 
 Will another volunteer explain how the rewritten callback works with bound function.
 
+Will yet another volunteer say how you decide whether you need to bind a callback function.
+
 **Bonus**: View [When and how to bind callback methods](https://speakerdeck.com/pedrottimark/bind-callback-methods-at-triadjs) by pedrottimark
 
 ## React elements as markup
 
+In React, an **element** is a plain object that describes a component instance or DOM node and its properties:
+
+* An element is not an instance.
+* You can’t call any methods on the element.
+* It’s an immutable object that tells React what you want to see on the screen.
+
+You don’t need to learn a templating language because:
+
+* JSX is a syntax extension to JavaScript which looks similar to HTML and SVG.
+* For data values, conditional logic, or `map` methods with component-specific callback functions, enclose any JavaScript expression in `{}` which are analogous to `${}` in template literals. If the context of the JSX interpolation
+
+Babel compiles JSX elements as `React.createElement(type, props, ...children)` function calls.
+
 1. In Terminal: `yarn test 19-react-elements-as-markup`
 2. In your code editor, open the `src/19-react-elements-as-markup.spec.js` file
+3. In your code editor, open the `src/__snapshots__/19-react-elements-as-markup.spec.js.snap` file
 
-**Bonus**: Read [React Components, Elements, and Instances](https://reactjs.org/blog/2015/12/18/react-components-elements-and-instances.html) by Dan Abramov
+**Bonus**: [Introducing JSX](https://reactjs.org/docs/introducing-jsx.html) and [JSX in Depth](https://reactjs.org/docs/jsx-in-depth.html)
 
 ## React elements as objects
 
-A [symbol](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol) can represent a **unique identifier**. Symbols are the only primitive types in JavaScript which don’t have a literal form. To create a symbol, call the `Symbol()` function.
+A [symbol](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol) can represent a **unique identifier**. Symbols are the only primitive types in JavaScript which don’t have a literal form.
 
-Here is an example of a **shared** symbol: `Symbol.for('react.element')` with a string identifier as argument.
+* To create a symbol, call the `Symbol()` function.
+* To create a **shared** symbol, call the `Symbol.for('react.element')` method with a string identifier as argument like `'react.element'`
 
-Because JSON doesn’t support symbols, React elements have a `$$typeof: Symbol.for('react.element')` property to safely distinguish them from plain objects in untrusted JSON.
+Because JSON doesn’t support symbols, React elements have a `$$typeof: Symbol.for('react.element')` property to safely distinguish them from plain objects in untrusted JSON data.
 
 1. In Terminal: `yarn test 20-react-elements-as-objects`
 2. In your code editor, open the `src/20-react-elements-as-objects.spec.js` file
+3. In your code editor, open the `src/__snapshots__/20-react-elements-as-objects.spec.js.snap` file
 
-**Bonus**: Read pages 99–104 [Symbols](https://leanpub.com/understandinges6/read#leanpub-auto-symbols-and-symbol-properties) by Nicholas C. Zakas
+**Bonus**: Read [React Components, Elements, and Instances](https://reactjs.org/blog/2015/12/18/react-components-elements-and-instances.html) by Dan Abramov
 
-## Application
+## Learn more, part 1
 
-See an example of local variables in function closure on lines 56–60, 98–99 in [Slim Redux in 99 lines](https://gist.github.com/gaearon/ffd88b0e4f00b22c3159)
+See an example of local variables for method closures in returned Redux store object on lines 56–60, 98–99 in [Slim Redux in 99 lines](https://gist.github.com/gaearon/ffd88b0e4f00b22c3159)
 
 ```js
 export function createStore(reducer, initialState) {
@@ -646,13 +669,30 @@ export function createStore(reducer, initialState) {
 }
 ```
 
-Preview of [TypeScript](http://www.typescriptlang.org/docs/home.html) classes:
+## Learn more, part 2
+
+For a feature of your choice at work or in side project:
+
+1. Write realistic state of Web page using data types object, array, string, number, boolean.
+2. Adapt `11-jsdom.js` with render functions for the data.
+3. Adapt `12-dom.html` and `12-dom.js` with copies of the render functions for the data.
+4. Adapt `18-function-bind.html` and `18-function-bind.js` with copies of the render functions and at least on event handler callback function.
+
+## Learn more, part 3
+
+Get a preview of [TypeScript](http://www.typescriptlang.org/docs/home.html) especially classes:
 
 1. [Basic Types](http://www.typescriptlang.org/docs/handbook/basic-types.html)
 2. [Interfaces](http://www.typescriptlang.org/docs/handbook/interfaces.html)
 3. [Classes](http://www.typescriptlang.org/docs/handbook/classes.html)
 
-## Resources
+## Resources for compatibility
+
+* [ECMAScript compatibility table](https://kangax.github.io/compat-table/es6/)
+* [Node.js ES2015, ES2016, and ES2017 support](http://node.green)
+* [Can I use? Support tables for HTML5, CSS3, etc.](https://caniuse.com)
+
+## Resources for language
 
 1. Reminder when you forget something you knew: [Learn ES2015](https://babeljs.io/learn-es2015/) at babeljs.io
 2. Depth when you need to know more: [Understanding ECMAScript 6](https://leanpub.com/understandinges6/read) by Nicholas C. Zakas

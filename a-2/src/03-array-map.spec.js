@@ -15,11 +15,14 @@ describe('array map', () => {
         const array = ['', 'P', 'SPAN', 'div', 'Mixed'];
         const expected = ['', 'p', 'span', 'div', 'mixed'];
         const received = array.map(string => /* TODO */);
-        expect(received).toEqual();
+        expect(received).toEqual(expected);
     });
 });
 
 describe('toggleCompleted', () => {
+    // Pure function treats items array and item objects as immutable data:
+    // Given items and id, return array
+    // in which the completed property of the item with id has opposite value.
     const toggleCompleted = (items, id) =>
         items.map(item => {
             // TODO
