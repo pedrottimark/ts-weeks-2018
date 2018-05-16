@@ -11,7 +11,7 @@ describe('point arrays to strings', function () {
 
     // Given point array whose items have number values,
     // return as string the coordinates separated by comma.
-    const arrayToString = function (array) {
+    const arrayToString = array => {
         // TODO
         // Declare variables `x` and `y` with array destructuring
         // Rewrite array index references array[0] and array[1] with x and y

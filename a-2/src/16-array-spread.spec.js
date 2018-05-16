@@ -1,11 +1,9 @@
 describe('array spread', function () {
     // Given array and item,
     // return new array to which item has been appended.
-    const addItem = function (array, item) {
-        // TODO
-        // rewrite with array spread operator instead of array concat method
-        return array.concat(item);
-    };
+    // TODO
+    // rewrite with array spread operator instead of array concat method
+    const addItem = (array, item) => array.concat(item);
 
     it('adds item to empty array', function () {
         const items = [];

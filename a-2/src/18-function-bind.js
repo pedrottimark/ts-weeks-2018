@@ -15,6 +15,7 @@ const item2 = {
     id: 1,
     text: '<script src="do-do.js"></script>',
 };
+const items = [item0, item1, item2];
 
 // Given untrusted text, replace angle brackets with HTML entity references.
 const escapeHTML = text => text.replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -40,4 +41,4 @@ const renderList = (items, onClick) => {
 };
 
 const root = document.querySelector('#root');
-root.appendChild(renderList([item0, item1, item2], (id) => { console.log(`onClick id=${id}`); }));
+root.appendChild(renderList(items, id => { console.log(`onClick id=${id}`); }));

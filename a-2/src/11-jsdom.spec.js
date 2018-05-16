@@ -22,7 +22,7 @@ const renderItem = item => {
     const li = document.createElement('li');
     li.setAttribute('class', item.completed ? 'completed' : 'uncompleted');
     li.innerHTML = item.text;
-    //li.innerHTML = escapeHTML(item.text);
+    // li.innerHTML = escapeHTML(item.text);
     return li;
 };
 

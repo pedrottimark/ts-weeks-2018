@@ -432,17 +432,19 @@ The goal of a snapshot test is to control **changes**:
 
 Practice reviewing the report when a test fails because there is a change:
 
-1. In your code editor, open the `src/11-jsdom.spec.js` file
-2. In Terminal: `yarn test 11-jsdom`
-3. Comment out the `li.innerHTML = item.text;` line and delete `//` preceding the following line
-4. In Terminal: `yarn test 11-jsdom` and see report that a test fails, because there is a change
-5. In Terminal: `yarn test 11-jsdom -u` to update the snapshot, because the change is progress
-6. **Both collaboratively**, Prepend `//` to disable comments above and below the second `describe` block and implement `renderList` function
-7. **Both collaboratively**, convert the output markup from list to table:
+1. In Terminal: `yarn test 11-jsdom`
+2. In your code editor, open the `src/11-jsdom.spec.js` file
+3. In your code editor, open the `src/__snapshots__/11-jsdom.spec.js.snap` file and compare the serialization for each test case     to the `renderItem` function and the item argument
+4. Comment out the `li.innerHTML = item.text;` line and delete `//` preceding the following line
+5. In Terminal: `yarn test 11-jsdom` and see report that a test fails, because there is a change
+6. In Terminal: `yarn test 11-jsdom -u` to update the snapshot, because the change is progress, and then look for the change in the `.snap` file
+7. **Both collaboratively**, Prepend `//` to disable comments above and below the second `describe` block and implement `renderList` function
+8. In Terminal: `yarn test 11-jsdom` and then look for the added snapshot in the `.snap` file
+9. **Both collaboratively**, convert the output markup from list to table:
     * Replace `ul` with `table` which contains `tbody`
     * Replace `li` with `tr` which contains `td`
-8. In Terminal: `yarn test 11-jsdom` and see report that tests fail, because there is a change
-9. In Terminal: `yarn test 11-jsdom -u` to update the snapshot, because the change is progress
+10. In Terminal: `yarn test 11-jsdom` and see report that tests fail, because there is are changes
+11. In Terminal: `yarn test 11-jsdom -u` to update the snapshot, because the change is progress, and then look for the changes in the `.snap` file
 
 ## DOM in browser
 
@@ -471,7 +473,7 @@ const greet = name => `hello ${name}`;
 
 1. In Terminal: `yarn test 13-template-literals`
 2. In your code editor, open the `src/13-template-literals.spec.js` file, and then:
-3. **Both collaboratively**, add a `describe` block with tests for nouns like `goose/geese` or `mouse/mice` which have a separate plural form instead of a plural suffix, and then write an alternative version of `pluralize` function.
+3. **Both collaboratively**, add a `describe` block with tests for nouns like `goose/geese` or `mouse/mice` which have a separate singular and plural form, and then write an alternative version of `pluralize` function.
 4. **Each individually**, add a `describe` block with a function and tests of your choice for an application-specific template string. For example:
     * Date format
     * Currency format
@@ -505,6 +507,11 @@ let y = 0.875;
 3. **Each individually**, comment out `return` statement following `// TODO` comment, and then:
     * Declare variables `x` and `y` with array destructuring
     * Rewrite array index references `array[0]` and `array[1]` with `x` and `y`
+4. **Both collaboratively**:
+    * Replace `array` argument of callback function with array destructuring from the declaration
+    * If there is a syntax error, what do you need to do?
+    * Delete the variable declaration from body of callback function
+    * Replace body and explicit `return` statement with implicit return without a body
 
 **Bonus**: Read pages 90–92 [Array destructuring](https://leanpub.com/understandinges6/read#leanpub-auto-array-destructuring) by Nicholas C. Zakas
 
@@ -520,14 +527,18 @@ const point = {x: 0.25, y: 0.875};
 const {x, y} = point;
 ```
 
-Unlike array destructuring, the variable names must match the property keys.
+Unlike array destructuring in which you choose names freely, the variable names must match the property keys.
 
 1. In Terminal: `yarn test 15-object-destructuring`
 2. In your code editor, open the `src/15-object-destructuring.spec.js` file
 3. **Both collaboratively**, comment out `renderItem` function definition following `// TODO` comment, and then:
     * Rewrite `item` argument with object destructuring for `completed` and `text` properties
-    * Hint: if object destructuring is the only argument, do the same as what you saw for object literal as the implicitly returned value of an arrow function
+    * If there is a syntax error, what do you need to do?
     * Rewrite dot notation on `item` argument with property names as arguments
+
+Will a volunteer say if key doesn’t exist in an object, what value does variable with that name get from destructuring.
+
+Will another volunteer say why you cannot replace `renderItem` function body with implicit return.
 
 **Bonus**: Read pages 84–89 [Object destructuring](https://leanpub.com/understandinges6/read#leanpub-auto-object-destructuring) by Nicholas C. Zakas
 
@@ -558,17 +569,17 @@ We still recommend array methods with callback functions, like `filter`, `map`, 
 
 1. In Terminal: `yarn test 16-array-spread`
 2. In your code editor, open the `src/16-array-spread.spec.js` file
-3. **Each individually**, comment out `return` statement following `// TODO` comment, and then rewrite with array spread operator instead of array `concat` method
+3. **Each individually**, comment out `addItem` declaration following `// TODO` comment, and then rewrite with array spread operator instead of array `concat` method
 
-## rest parameter
-
-You can also “spread out” items in an array as arguments in a function **call**:
+Will a volunteer say what `...` means for an argument in a function **call**:
 
 ```js
 const element = React.createElement(type, props, ...children);
 ```
 
-A **rest parameter** preceded by `...` is an argument in a function **definition** which becomes an array of zero or more items which are the rest of its arguments:
+## rest parameter
+
+A **rest parameter** is an argument preceded by `...` in a function **definition**. It becomes an array of zero or more items which are the rest of the arguments:
 
 ```js
 const React = {
@@ -596,19 +607,19 @@ The last value for a repeated key is the winner.
 3. **Take turns**: Comment out `toggleCompleted` declaration following `// TODO` comment, and then rewrite with object spread operator instead of `Object.assign` method
 4. **Change roles**: Comment out `replaceText` declaration following `// TODO` comment, and then rewrite with object spread operator instead of `Object.assign` method
 
-Will a volunteer say which ES2015 notation you see in the `replaceText` function.
+Will a volunteer say another ES2015 object notation you see in the `replaceText` function.
 
 **Bonus**: Read [Spread defines properties](http://2ality.com/2016/10/rest-spread-properties.html#spread-defines-properties-objectassign-sets-them) by Dr. Axel Rauschmayer
 
 ## function bind
 
-The [`addEventListener`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener) method adds a function to be called when the specified event occurs at the target element.
+The [`addEventListener`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener) method adds a function to be called when the specified event occurs at the target element in the DOM.
 
 The [`'click'`](https://developer.mozilla.org/en-US/docs/Web/Events/click) event occurs when the pointing device button is pressed and released.
 
-The function [`bind`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind) method creates a new function that, when called:
-* `this` is set to the first argument, which is `null` if context is not relevant
-* has any additional arguments preceding any in the function call
+The function [`bind`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind) method creates a new function which, when called:
+* has `this` context set to the first argument (which is `null` if not relevant)
+* has any additional bound arguments preceding arguments from the function call
 
 When you render an array of objects as a list of items, the callback function needs the `id` of the data item which corresponds to the item element that is clicked.
 
@@ -645,7 +656,9 @@ In React, an **element** is a plain object that describes a component instance o
 You don’t need to learn a templating language because:
 
 * JSX is a syntax extension to JavaScript which looks similar to HTML and SVG.
-* For data values, conditional logic, or `map` methods with component-specific callback functions, enclose any JavaScript expression in `{}` which are analogous to `${}` in template literals. If the context of the JSX interpolation
+* For data values, conditional logic, or `map` methods with component-specific callback functions, enclose any JavaScript expression in `{}` which are analogous to `${}` in template literals.
+
+> By default, React DOM escapes any values embedded in JSX before rendering them. Thus it ensures that you can never inject anything that’s not explicitly written in your application. Everything is converted to a string before being rendered. This helps prevent XSS (cross-site-scripting) attacks.
 
 Babel compiles JSX elements as `React.createElement(type, props, ...children)` function calls.
 
@@ -659,8 +672,8 @@ Babel compiles JSX elements as `React.createElement(type, props, ...children)` f
 
 A [symbol](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol) can represent a **unique identifier**. Symbols are the only primitive types in JavaScript which don’t have a literal form.
 
-* To create a symbol, call the `Symbol()` function.
-* To create a **shared** symbol, call the `Symbol.for('react.element')` method with a string identifier as argument like `'react.element'`
+* To create a symbol in a module, call the `Symbol()` function.
+* To create a symbol that is **shared** in more than one module, call the `Symbol.for('react.element')` method with a string identifier as argument like `'react.element'`
 
 Because JSON doesn’t support symbols, React elements have a `$$typeof: Symbol.for('react.element')` property to safely distinguish them from plain objects in untrusted JSON data.
 
@@ -672,7 +685,7 @@ Because JSON doesn’t support symbols, React elements have a `$$typeof: Symbol.
 
 ## Learn more, part 1
 
-See an example of local variables for method closures in returned Redux store object on lines 56–60, 98–99 in [Slim Redux in 99 lines](https://gist.github.com/gaearon/ffd88b0e4f00b22c3159)
+See local variables for method closures in returned Redux store object on lines 56–60, 98–99 in [Slim Redux in 99 lines](https://gist.github.com/gaearon/ffd88b0e4f00b22c3159)
 
 ```js
 export function createStore(reducer, initialState) {
@@ -687,7 +700,7 @@ export function createStore(reducer, initialState) {
 
 ## Learn more, part 2
 
-For a feature of your choice at work or in side project:
+Render a feature of your choice from work or hobby:
 
 1. Write realistic state of Web page using data types object, array, string, number, boolean.
 2. Adapt `11-jsdom.js` with render functions for the data.
@@ -711,5 +724,6 @@ Get a preview of [TypeScript](http://www.typescriptlang.org/docs/home.html) espe
 ## Resources for language
 
 1. Reminder when you forget something you knew: [Learn ES2015](https://babeljs.io/learn-es2015/) at babeljs.io
-2. Depth when you need to know more: [Understanding ECMAScript 6](https://leanpub.com/understandinges6/read) by Nicholas C. Zakas
-3. News you can use: [2ality – JavaScript and more](http://2ality.com/) blog by Dr. Axel Rauschmayer
+2. Details and related information: [JavaScript Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference) at developer.mozilla.org
+3. Deeper conceptual understanding: [Understanding ECMAScript 6](https://leanpub.com/understandinges6/read) by Nicholas C. Zakas
+4. News you can use: [2ality – JavaScript and more](http://2ality.com/) blog by Dr. Axel Rauschmayer
