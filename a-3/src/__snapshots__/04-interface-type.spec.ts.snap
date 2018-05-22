@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`interface type limit precision to 3 digits 1 or 3 digits 1`] = `"0.5,0.875"`;
+
+exports[`interface type limit precision to 3 digits 1 or truncated to 3 digits 1`] = `"0.5,0.460"`;
+
+exports[`interface type limit precision to 3 digits 2 or 3 digits 1`] = `"0.25,0.875"`;
+
+exports[`interface type limit precision to 4 digits 1 or 3 digits 1`] = `"0.5,0.875"`;
+
+exports[`interface type limit precision to 4 digits 1 or truncated to 4 digits 1`] = `"0.5,0.4603"`;
+
+exports[`interface type limit precision to 4 digits 2 or 3 digits 1`] = `"0.25,0.875"`;

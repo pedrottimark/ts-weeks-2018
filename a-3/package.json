@@ -1,19 +1,36 @@
 {
-  "name": "a-3",
-  "version": "1.0.0",
-  "private": true,
-  "description": "TypeScript",
-  "license": "MIT",
-  "scripts": {
-      "test": "jest"
-  },
-  "devDependencies": {
-      "jest": "^22.4.3",
-      "react": "^16.3.2"
-  },
-  "dependencies": {
-      "prettier": "^1.12.1",
-      "tslint": "^5.10.0",
-      "typescript": "^2.8.3"
-  }
+    "name": "a-3",
+    "version": "1.0.0",
+    "private": true,
+    "description": "TypeScript",
+    "license": "MIT",
+    "scripts": {
+        "lint": "tslint",
+        "prettier": "prettier --write",
+        "test": "jest"
+    },
+    "prettier": {
+        "semi": false,
+        "tabWidth": 4,
+        "printWidth": 120,
+        "singleQuote": true
+    },
+    "jest": {
+        "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json", "node"],
+        "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(js|tsx?)$",
+        "transform": {
+            "^.+\\.tsx?$": "ts-jest"
+        }
+    },
+    "devDependencies": {
+        "@types/jest": "^22.2.3",
+        "jest": "^22.4.3",
+        "prettier": "^1.12.1",
+        "ts-jest": "^22.4.6",
+        "tslint": "^5.10.0",
+        "typescript": "^2.8.3"
+    },
+    "dependencies": {
+        "react": "^16.3.2"
+    }
 }
