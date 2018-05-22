@@ -5,9 +5,16 @@
     "description": "TypeScript",
     "license": "MIT",
     "scripts": {
+        "compile": "tsc --outDir ./lib --alwaysStrict --target ES2015",
         "lint": "tslint",
         "prettier": "prettier --write",
         "test": "jest"
+    },
+    "babel": {
+        "plugins": [
+            "transform-es2015-modules-commonjs",
+            "transform-object-rest-spread"
+        ]
     },
     "prettier": {
         "semi": false,
@@ -16,14 +23,26 @@
         "singleQuote": true
     },
     "jest": {
-        "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json", "node"],
+        "moduleFileExtensions": [
+            "ts",
+            "tsx",
+            "js",
+            "jsx",
+            "json",
+            "node"
+        ],
         "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(js|tsx?)$",
         "transform": {
+            "^.+\\.jsx?$": "babel-jest",
             "^.+\\.tsx?$": "ts-jest"
         }
     },
     "devDependencies": {
         "@types/jest": "^22.2.3",
+        "babel-core": "^6.26.3",
+        "babel-jest": "^22.4.4",
+        "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
+        "babel-plugin-transform-object-rest-spread": "^6.26.0",
         "jest": "^22.4.3",
         "prettier": "^1.12.1",
         "ts-jest": "^22.4.6",

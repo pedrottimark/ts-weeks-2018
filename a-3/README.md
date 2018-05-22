@@ -8,7 +8,7 @@ It works well with other software quality tools:
 * Jest: delightful JavaScript **testing**
 * Prettier: opinionated code **formatter**
 
-Will a volunteer say which of these tools use static analysis.
+Will a volunteer say which of these tools use **static** analysis.
 
 > testing pyramid in 2016
 
@@ -50,7 +50,7 @@ If TypeScript is installed in your project, then you can run the `tsc` compiler:
 
 6. In your code editor:
 
-    * Open the `package.json` file and then paste `"compile": "tsc --outDir ./lib --alwaysStrict --target ES2015",` as the first property in `"scripts"` object
+    * Open the `package.json` file and then see `compile` property in `"scripts"` object
 
     * Open the `tsconfig.json` file and then paste above the `"exclude"` property:
 
@@ -65,6 +65,8 @@ If TypeScript is installed in your project, then you can run the `tsc` compiler:
 7. In Terminal: `yarn compile src/01-basic-types.ts`
 
 Will a volunteer say how the `--target ES2015` option affected the variable declarations in the `.js` file.
+
+**Bonus**: Read [Basic Types](http://www.typescriptlang.org/docs/handbook/basic-types.html)
 
 ## input and output types
 
@@ -89,6 +91,8 @@ const fixValue3 = (value: number): string => { … };
 5. In Terminal: `yarn compile src/02-input-output-types.ts`
 
 6. In Terminal: `yarn lint src/02-input-output-types.ts`
+
+**Bonus**: Read [Functions](http://www.typescriptlang.org/docs/handbook/functions.html)
 
 ## function type
 
@@ -119,6 +123,8 @@ type FixValue = (value: number) => string;
 
 7. In your browser, open [`https://palantir.github.io/tslint/rules/`](https://palantir.github.io/tslint/rules/)
 
+**Bonus**: Read [Type Aliases](http://www.typescriptlang.org/docs/handbook/advanced-types.html#type-aliases)
+
 ## interface type
 
 > One of TypeScript’s core principles is that type-checking focuses on the shape that values have. Interfaces are a powerful way of defining contracts within your code as well as contracts with code outside of your project.
@@ -148,6 +154,8 @@ type FixValue = (value: number) => string;
 
 Will a volunteer say the pros and cons of adding a type annotation for the output of the `fixPoint` function.
 
+**Bonus**: Read [Interfaces](http://www.typescriptlang.org/docs/handbook/interfaces.html)
+
 ## array type
 
 You can write an array type in two ways:
@@ -171,7 +179,7 @@ You can write an array type in two ways:
 
 5. In Terminal: `yarn lint 05-array-type.spec.ts`
 
-## CommonJS module
+## CommonJS module exports one value
 
 To import from a CommonJS module:
 
@@ -191,10 +199,32 @@ module.exports = ({ singular, plural, suffix }) =>
         : value => `TODO`
 ```
 
-1. In your code editor, open the `src/06-commonjs-module.js` file, and then
+1. In your code editor, open the `src/06-commonjs-module.js` file, and then replace `// TODO` comments with implementations of template literals
 
 2. In Terminal: `yarn test 06-commonjs-module`
 
 3. If you write in at least one other language than English, open the `src/06-commonjs-module.spec.js` file, and then add some tests to numerize noun phrases in another language
 
 Will a volunteer say if you needed to add properties to the configuration object for your language.
+
+## CommonJS module exports multiple values
+
+To import multiple values from a CommonJS module:
+
+```js
+const {addItem, deleteItem, toggleItem} = require('./07-commonjs-module')
+```
+
+To export multiple values from a CommonJS module:
+
+```js
+module.exports.addItem = (items, text) => // TODO
+module.exports.deleteItem = (items, id) => // TODO
+module.exports.toggleItem = (items, id) => // TODO
+```
+
+1. In your code editor, open the `src/07-commonjs-module.js` file, and then replace `// TODO` comments with implementations of pure functions
+
+2. In Terminal: `yarn test 07-commonjs-module`
+
+Will volunteers say which array methods or ES2015 features that you used.
