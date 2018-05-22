@@ -1,0 +1,22 @@
+{
+    "thing": {
+        "singular": "thing",
+        "suffix": "s"
+    },
+    "sheep": {
+        "singular": "sheep",
+        "suffix": ""
+    },
+    "ox": {
+        "singular": "ox",
+        "suffix": "en"
+    },
+    "inch": {
+        "singular": "inch",
+        "suffix": "es"
+    },
+    "geese": {
+        "singular": "goose",
+        "plural": "geese"
+    }
+}

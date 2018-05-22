@@ -286,3 +286,34 @@ export const toggleItem = (items, id) => // TODO
 3. In your code editor, open the `src/09-ecmascript-modules.spec.js` file, and then convert from CommonJS to ECMAScript module import
 
 4. In Terminal: `yarn test 09-ecmascript-module`
+
+**Bonus**: Read [Encapsulating Code with Modules](https://leanpub.com/understandinges6/read#leanpub-auto-encapsulating-code-with-modules) by Nicholas C. Zakas
+
+## ECMAScript module type in script element
+
+1. In your code editor, open:
+
+    * the `src/10-ecmascript-export.js` file
+    * the `src/10-ecmascript-import.js` file
+    * the `src/10-ecmascript-module.html` file
+
+2. In your Web browser, open the `src/10-ecmascript-module.html` file, and then open the Console pane to see an error like `Cross-origin script load denied by Cross-Origin Resource Sharing policy`
+
+3. In Terminal: `yarn start ./src/10-db.json`
+
+4. In your Web browser, paste `http://localhost:3000/10-ecmascript-module.html` into the address bar
+
+5. In the `src/10-ecmascript-import.js` file:
+
+    * Delete `.js` file extension from `import` statement, and then refresh the browser tab
+    * Will a volunteer say what Node.js assumes that a Web browser doesn’t
+    * Undo your change, and then refresh the browser tab
+
+6. In Terminal, press control-c to stop the server
+
+7. In your code editor:
+
+    * Open the `package.json` file and see the `"start": "json-server --static ./src"` property in the `"scripts"` object
+    * Open the `src/10-db.json` file and will a volunteer say what it represents (even if we did not use it :)
+
+**Bonus**: Read [Static file server](https://www.npmjs.com/package/json-server#static-file-server) under `json-server` at `npm`
