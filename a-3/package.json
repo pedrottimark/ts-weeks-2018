@@ -8,6 +8,7 @@
         "compile": "tsc --outDir ./lib --alwaysStrict --target ES2015",
         "lint": "tslint",
         "prettier": "prettier --write",
+        "start": "json-server --static ./src",
         "test": "jest"
     },
     "babel": {
@@ -44,6 +45,7 @@
         "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
         "babel-plugin-transform-object-rest-spread": "^6.26.0",
         "jest": "^22.4.3",
+        "json-server": "^0.12.2",
         "prettier": "^1.12.1",
         "ts-jest": "^22.4.6",
         "tslint": "^5.10.0",
