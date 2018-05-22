@@ -228,3 +228,61 @@ module.exports.toggleItem = (items, id) => // TODO
 2. In Terminal: `yarn test 07-commonjs-module`
 
 Will volunteers say which array methods or ES2015 features that you used.
+
+## ECMAScript module exports one value
+
+To import from an ECMAScript module:
+
+* Node.js core module: `import fs from 'fs'`
+* Installed dependency: `import React from 'react'`
+* Application-specific module: `import numerizer from './ecmascript-module'`
+
+To export one value from a CommonJS module:
+
+```js
+// Given configuration object which has singular property as string
+// and either plural or suffix property as string,
+// return function which given value as number, returns noun phrase as string.
+export default ({ singular, plural, suffix }) =>
+    typeof plural === 'string'
+        ? value => `TODO`
+        : value => `TODO`
+```
+
+1. In your code editor, open the `src/06-commonjs-module.js` file
+
+2. In your code editor, open the `src/08-ecmascript-modules.js` file, and then:
+
+    * Convert from CommonJS to ECMAScript module export (remember to change the file name :)
+    * Replace `// TODO` comments with your implementations of template literals from previous practice
+
+3. In your code editor, open the `src/08-ecmascript-modules.spec.js` file, and then convert from CommonJS to ECMAScript module import
+
+4. In Terminal: `yarn test 08-ecmascript-module`
+
+## ECMAScript module exports multiple values
+
+To import multiple values from a CommonJS module:
+
+```js
+import {addItem, deleteItem, toggleItem} from './07-commonjs-module'
+```
+
+To export multiple values from a CommonJS module:
+
+```js
+export const addItem = (items, text) => // TODO
+export const deleteItem = (items, id) => // TODO
+export const toggleItem = (items, id) => // TODO
+```
+
+1. In your code editor, open the `src/07-commonjs-module.js` file
+
+2. In your code editor, open the `src/09-ecmascript-modules.js`, and then:
+
+    * Convert from CommonJS to ECMAScript module (remember to change the file name :)
+    * Replace `// TODO` comments with your implementations of pure functions from previous practice
+
+3. In your code editor, open the `src/09-ecmascript-modules.spec.js` file, and then convert from CommonJS to ECMAScript module import
+
+4. In Terminal: `yarn test 09-ecmascript-module`
