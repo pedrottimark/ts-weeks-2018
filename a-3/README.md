@@ -393,3 +393,18 @@ class TextNode {
 3. In Terminal: `yarn test 14-class`
 
 **Bonus**: Read [Classes](http://www.typescriptlang.org/docs/handbook/classes.html)
+
+## createElement
+
+1. In your code editor, open the `src/15-create-element.ts` file:
+
+    * Add type annotations to `getAttributeName` function
+    * Add type annotations to `getEventName` function and write its implementation
+    * Add type annotations to `getChild` function and finish its implementation
+    * Finish implementation of `createElement` function to call the helper functions
+
+2. In your code editor, open the `src/15-create-element.spec.ts` file, add an `import` statement for the virtual constructor function
+
+3. In Terminal: `yarn test 15-create-element`
+
+## my application
