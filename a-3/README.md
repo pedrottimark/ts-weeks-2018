@@ -409,6 +409,8 @@ class TextNode {
 
 ## my application
 
+To practice everything that we have learned about JavaScript language and Document Object Model, invest the remaining time to rewrite a sample application so it displays data that interests you from work or hobby.
+
 1. In Terminal: `yarn compile src/05-create-element.ts`
 
 2. In your code editor, open:
@@ -421,7 +423,7 @@ class TextNode {
 
 4. In your Web browser, paste `http://localhost:3000/16-my-app.html` into the address bar
 
-5. Rewrite the application to make it display data that interests you from work or hobby:
+5. Rewrite the application:
 
     * If you want to write ECMAScript, edit `lib/16-my-app.js` and then refresh the browser tab
     * If you want to write TypeScript, create `src/16-my-app.ts` and then `yarn compile src/16-my-app.ts` to overwrite the `.js` file in the `lib` subdirectory, and then refresh the browser tab
