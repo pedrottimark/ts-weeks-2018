@@ -299,17 +299,17 @@ export const toggleItem = (items, id) => // TODO
 
 1. In your code editor, open:
 
-    * the `src/10-ecmascript-export.js` file
-    * the `src/10-ecmascript-import.js` file
-    * the `src/10-ecmascript-module.html` file
+    * the `lib/10-ecmascript-export.js` file
+    * the `lib/10-ecmascript-import.js` file
+    * the `lib/10-ecmascript-module.html` file
 
-2. In your Web browser, open the `src/10-ecmascript-module.html` file, and then open the Console pane to see an error like `Cross-origin script load denied by Cross-Origin Resource Sharing policy`
+2. In your Web browser, open the `lib/10-ecmascript-module.html` file, and then open the Console pane to see an error like `Cross-origin script load denied by Cross-Origin Resource Sharing policy`
 
 3. In Terminal: `yarn start ./src/10-db.json`
 
 4. In your Web browser, paste `http://localhost:3000/10-ecmascript-module.html` into the address bar
 
-5. In the `src/10-ecmascript-import.js` file:
+5. In the `lib/10-ecmascript-import.js` file:
 
     * Delete `.js` file extension from `import` statement, and then refresh the browser tab
     * Will a volunteer say what Node.js assumes that a Web browser doesn’t
@@ -408,3 +408,22 @@ class TextNode {
 3. In Terminal: `yarn test 15-create-element`
 
 ## my application
+
+1. In Terminal: `yarn compile src/05-create-element.ts`
+
+2. In your code editor, open:
+
+    * the `lib/16-my-app.html` file
+    * the `lib/16-my-app.css` file
+    * the `lib/16-my-app.js` file
+
+3. In another Terminal: `yarn start ./src/16-db.json`
+
+4. In your Web browser, paste `http://localhost:3000/16-my-app.html` into the address bar
+
+5. Rewrite the application to make it display data that interests you from work or hobby:
+
+    * If you want to write ECMAScript, edit `lib/16-my-app.js` and then refresh the browser tab
+    * If you want to write TypeScript, create `src/16-my-app.ts` and then `yarn compile src/16-my-app.ts` to overwrite the `.js` file in the `lib` subdirectory, and then refresh the browser tab
+
+6. In Terminal, press control-c to stop the server when you have finished

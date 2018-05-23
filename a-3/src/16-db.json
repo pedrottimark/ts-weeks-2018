@@ -1,0 +1,19 @@
+{
+    "items": [
+        {
+            "completed": true,
+            "id": 1,
+            "text": "I done it.",
+        },
+        {
+            "completed": false,
+            "id": 2,
+            "text": "Just do it!",
+        },
+        {
+            "completed": false,
+            "id": 3,
+            "text": "<script src=\"do-do.js\"></script>",
+        }
+    ]
+}
