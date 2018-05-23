@@ -60,12 +60,12 @@ describe('CommonJS module', () => {
             expect(received).toBe(expected)
         })
         test('zero plural', () => {
-            const received = numerize(0, 'goose', 'geese')
+            const received = numerize(0)
             const expected = '0 geese'
             expect(received).toBe(expected)
         })
         test('non-zero plural', () => {
-            const received = numerize(2, 'goose', 'geese')
+            const received = numerize(2)
             const expected = '2 geese'
             expect(received).toBe(expected)
         })

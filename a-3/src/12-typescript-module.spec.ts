@@ -1,4 +1,4 @@
-const {addItem, deleteItem, toggleItem} = require('./07-commonjs-module')
+import {addItem, deleteItem, toggleItem} from './12-typescript-module'
 
 it('adds item to empty array', () => {
     const items = []

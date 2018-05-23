@@ -1,6 +1,6 @@
-const numerizer = require('./06-commonjs-module')
+import numerizer from './11-typescript-module'
 
-describe('CommonJS module', () => {
+describe('TypeScript module', () => {
     describe('suffix s', () => {
         const numerize = numerizer({
             singular: 'thing',
@@ -60,12 +60,12 @@ describe('CommonJS module', () => {
             expect(received).toBe(expected)
         })
         test('zero plural', () => {
-            const received = numerize(0)
+            const received = numerize(0, 'goose', 'geese')
             const expected = '0 geese'
             expect(received).toBe(expected)
         })
         test('non-zero plural', () => {
-            const received = numerize(2)
+            const received = numerize(2, 'goose', 'geese')
             const expected = '2 geese'
             expect(received).toBe(expected)
         })

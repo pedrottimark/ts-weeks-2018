@@ -1,6 +1,6 @@
 const {addItem, deleteItem, toggleItem} = require('./07-commonjs-module')
 
-it('adds item to empty array', function () {
+it('adds item to empty array', () => {
     const items = []
     const text = 'Just do it!'
     const item = {
@@ -14,7 +14,7 @@ it('adds item to empty array', function () {
     expect(received).not.toBe(items) // because pure
     expect(received).toEqual([item])
 })
-it('adds item to non-empty array', function () {
+it('adds item to non-empty array', () => {
     const item0 = {
         completed: true,
         id: 0,

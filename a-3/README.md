@@ -237,7 +237,7 @@ To import from an ECMAScript module:
 * Installed dependency: `import React from 'react'`
 * Application-specific module: `import numerizer from './ecmascript-module'`
 
-To export one value from a CommonJS module:
+To export one value from an ECMAScript module:
 
 ```js
 // Given configuration object which has singular property as string
@@ -251,24 +251,27 @@ export default ({ singular, plural, suffix }) =>
 
 1. In your code editor, open the `src/06-commonjs-module.js` file
 
-2. In your code editor, open the `src/08-ecmascript-modules.js` file, and then:
+2. In your code editor, open the `src/08-ecmascript-module.js` file, and then:
 
-    * Convert from CommonJS to ECMAScript module export (remember to change the file name :)
+    * Convert from CommonJS to ECMAScript module export
     * Replace `// TODO` comments with your implementations of template literals from previous practice
 
-3. In your code editor, open the `src/08-ecmascript-modules.spec.js` file, and then convert from CommonJS to ECMAScript module import
+3. In your code editor, open the `src/08-ecmascript-module.spec.js` file:
+
+    * Change the string in the main `describe` block
+    * Convert from CommonJS to ECMAScript module import (remember to change the file name :)
 
 4. In Terminal: `yarn test 08-ecmascript-module`
 
 ## ECMAScript module exports multiple values
 
-To import multiple values from a CommonJS module:
+To import multiple values from an ECMAScript module:
 
 ```js
 import {addItem, deleteItem, toggleItem} from './07-commonjs-module'
 ```
 
-To export multiple values from a CommonJS module:
+To export multiple values from an ECMAScript module:
 
 ```js
 export const addItem = (items, text) => // TODO
@@ -278,12 +281,15 @@ export const toggleItem = (items, id) => // TODO
 
 1. In your code editor, open the `src/07-commonjs-module.js` file
 
-2. In your code editor, open the `src/09-ecmascript-modules.js`, and then:
+2. In your code editor, open the `src/09-ecmascript-module.js`, and then:
 
-    * Convert from CommonJS to ECMAScript module (remember to change the file name :)
+    * Convert from CommonJS to ECMAScript module
     * Replace `// TODO` comments with your implementations of pure functions from previous practice
 
-3. In your code editor, open the `src/09-ecmascript-modules.spec.js` file, and then convert from CommonJS to ECMAScript module import
+3. In your code editor, open the `src/09-ecmascript-module.spec.js` file:
+
+    * Change the string in the main `describe` block
+    * Convert from CommonJS to ECMAScript module import (remember to change the file name :)
 
 4. In Terminal: `yarn test 09-ecmascript-module`
 
@@ -317,3 +323,73 @@ export const toggleItem = (items, id) => // TODO
     * Open the `src/10-db.json` file and will a volunteer say what it represents (even if we did not use it :)
 
 **Bonus**: Read [Static file server](https://www.npmjs.com/package/json-server#static-file-server) under `json-server` at `npm`
+
+## TypeScript module exports one value
+
+TypeScript 1.5 introduced support for the ECMAScript module syntax.
+
+1. In your code editor, open the `src/11-typescript-module.ts` file:
+
+    * Add a `Numerize` function type which given value as number returns string
+    * Add a `Numerizer` function type which given config as `Config` returns `Numerize` function
+    * Add `Numerizer` type annotation to `numerizer` declaration
+
+2. In your code editor, open the `src/11-typescript-module.spec.ts` file and will a volunteer say what is the change to configuration object for sheep
+
+3. In Terminal: `yarn test 11-typescript-module`
+
+4. In your code editor, open the `src/12-typescript-module.ts` file:
+
+    * Add an `Item` interface
+    * Add an `Items` array type
+    * Add type annotation to the input arguments and output return values of all functions
+
+2. In your code editor, open the `src/12-typescript-module.spec.ts` file
+
+3. In Terminal: `yarn test 12-typescript-module`
+
+## Node.js experimental ESM module loader
+
+If Node.js 8.5.0 or later is installed on your computer, then you can experiment with ECMAScript module files which have `.mjs` extension.
+
+1. In your code editor, open:
+
+    * the `src/13-ecmascript-export.mjs` file
+    * the `src/13-ecmascript-import.mjs` file
+
+2. In Terminal: `node --experimental-modules src/13-ecmascript-import`
+
+## TypeScript class
+
+In a TypeScript class:
+
+* Declare class methods and instance properties as `private`, `protected`, or `public` (by default)
+* Declare instance properties which only constructor can set as `readonly`
+
+```js
+class TextNode {
+    public readonly nodeType: number
+    public data: string
+    public constructor(data: string) {
+        this.nodeType = 3
+        this.data = data
+    }
+}
+```
+
+1. In your code editor, open the `src/14-class.ts` file:
+
+    * Add `Attribute` interface below `Node` type
+    * Add instance property declarations above `constructor` of `Element` class
+    * Declare class methods as `public`
+    * Add type annotations to input arguments of class methods and virtual constructor functions
+    * If you see `prefer-for-of` error from tslint, replace `for` loop with `for-of` loop in `setAttribute` method (search online for an example ;)
+
+2. In your code editor, open the `src/11-typescript-module.spec.ts` file:
+
+    * Add an `import` statement for the virtual constructor functions
+    * Add declarations of `ELEMENT_NODE` and `TEXT_NODE` values
+
+3. In Terminal: `yarn test 14-class`
+
+**Bonus**: Read [Classes](http://www.typescriptlang.org/docs/handbook/classes.html)
