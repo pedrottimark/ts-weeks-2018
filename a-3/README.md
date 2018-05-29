@@ -117,7 +117,7 @@ type FixValue = (value: number) => string;
 
 4. In Terminal: `yarn test 03-function-type`
 
-5. In Terminal: `yarn lint 03-function-type.spec.ts`
+5. In Terminal: `yarn lint src/03-function-type.spec.ts`
 
 6. In your code editor, open the `tslint.json` file
 
@@ -150,7 +150,7 @@ type FixValue = (value: number) => string;
 
 4. In Terminal: `yarn test 04-interface-type`
 
-5. In Terminal: `yarn lint 04-interface-type.spec.ts`
+5. In Terminal: `yarn lint src/04-interface-type.spec.ts`
 
 Will a volunteer say the pros and cons of adding a type annotation for the output of the `fixPoint` function.
 
@@ -177,7 +177,7 @@ You can write an array type in two ways:
 
 4. In Terminal: `yarn test 05-array-type`
 
-5. In Terminal: `yarn lint 05-array-type.spec.ts`
+5. In Terminal: `yarn lint src/05-array-type.spec.ts`
 
 ## CommonJS module exports one value
 
@@ -411,7 +411,7 @@ class TextNode {
 
 To practice everything that we have learned about JavaScript language and Document Object Model, invest the remaining time to rewrite a sample application so it displays data that interests you from work or hobby.
 
-1. In Terminal: `yarn compile src/05-create-element.ts`
+1. In Terminal: `yarn compile src/15-create-element.ts`
 
 2. In your code editor, open:
 
