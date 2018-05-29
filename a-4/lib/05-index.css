@@ -1,0 +1,109 @@
+* {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+    line-height: 1.5rem;
+}
+
+fieldset {
+    display: flex;
+    margin-top: 1rem;
+}
+
+fieldset.hidden {
+    visibility: hidden;
+}
+
+table,
+fieldset {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+table {
+    margin-top: 2rem;
+    border-collapse: collapse;
+    border-spacing: 0;
+    background-color: hsl(0, 0%, 90%);
+}
+
+th {
+    font-weight: normal;
+    color: hsl(0, 0%, 50%);
+    border-color: hsl(0, 0%, 50%);
+    border-width: 1px;
+    border-bottom-style: solid;
+}
+
+th:nth-child(1),
+td:nth-child(1),
+label {
+    width: 6rem;
+    padding-right: 1rem;
+    text-align: right;
+}
+
+th:nth-child(3),
+td:nth-child(3) {
+    padding-left: 1rem;
+    padding-right: 0.5rem;
+    text-align: right;
+}
+
+button,
+input {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    border-radius: 0.25rem;
+    border-style: solid;
+    border-width: 1px;
+}
+
+th:nth-child(2),
+td:nth-child(2),
+input {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+button {
+    min-width: 6rem;
+    margin-left: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+form[name="item"] button {
+    color: hsl(240, 100%, 25%);
+    border-color: hsl(240, 100%, 25%);
+    background-color: hsl(240, 100%, 90%);
+}
+
+form[name="quantity"] button[type="submit"] {
+    color: hsl(90, 100%, 25%);
+    border-color: hsl(90, 100%, 25%);
+    background-color: hsl(90, 100%, 90%);
+}
+
+form[name="quantity"] button[type="reset"] {
+    color: hsl(30, 100%, 25%);
+    border-color: hsl(30, 100%, 25%);
+    background-color: hsl(30, 100%, 90%);
+}
+
+form[name="item"] button:disabled,
+form[name="quantity"] button[type="submit"]:disabled,
+form[name="quantity"] button[type="reset"]:disabled {
+    background-color: transparent;
+}
+
+input[name="description"] {
+    color: inherit;
+    background-color: transparent;
+    border-color: transparent;
+}
