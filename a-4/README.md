@@ -328,6 +328,22 @@ Will a volunteer explain how the `catch` callback function distinguishes HTTP er
 
 Unlike the previous example, which didn’t type check responses and did handle latency, this example does type check responses and doesn’t handle latency :)
 
+The `Promise.all` method whose argument is an array of promises from `fetch` calls to two “endpoints” on the server for the Todo List application. It returns a promise which is fulfilled when **every** promise has been resolved.
+
+```js
+// When promise resolves, update heading and ul.
+Promise.all([getDoer(state.doerId), getItems(state.doerId)])
+    .then(([doer, items]) => {
+        state.doerName = doer.name
+        state.items = items
+        h1.innerText = `Todo List for ${state.doerName}`
+        state.items.forEach(item => {
+            ul.appendChild(renderItem({ item, onDeleteItem, onToggleCompleted }))
+        })
+    })
+    .catch(error => console.error(error.message))
+```
+
 1. In Terminal: `yarn compile src/06-*.ts`
 2. In your code editor, open:
     * the `src/06-fetch.ts` file
