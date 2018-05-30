@@ -36,10 +36,10 @@ let state = { ...stateDefault }
 const renderRow = (description: string, code: number, quantity?: number) =>
     createElement(
         'tr',
-        null,
-        createElement('td', null, quantity === undefined ? '' : quantity),
-        createElement('td', null, description),
-        createElement('td', null, code)
+        //null,
+        //createElement('td', null, quantity === undefined ? '' : quantity),
+        //createElement('td', null, description),
+        //createElement('td', null, code)
     )
 
 // Given state, update properties of elements in user interface.

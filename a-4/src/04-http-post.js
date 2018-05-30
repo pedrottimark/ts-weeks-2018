@@ -47,12 +47,12 @@ http.createServer((req, res) => {
             res.writeHead(200, {'Content-Type': 'text/html'})
             res.end(renderPage(items))
         } else if (req.url === '/' && req.method === 'POST') {
-            req.on('data', function (chunk) {
+            req.on('data', (chunk) => {
                 console.info('Called function for data event')
 
                 body += chunk;
             });
-            req.on('end', function () {
+            req.on('end', () => {
                 console.info('Called function for end event')
                 console.info(`Posted:\n${body}`)
 

@@ -33,6 +33,7 @@ table {
 
 th {
     font-weight: normal;
+    text-align: left;
     color: hsl(0, 0%, 50%);
     border-color: hsl(0, 0%, 50%);
     border-width: 1px;

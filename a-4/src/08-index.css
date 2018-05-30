@@ -1,0 +1,160 @@
+* {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+    background-image: url('08-image.svg'), url('08-image.jpg');
+    background-repeat: no-repeat, no-repeat;
+    background-origin: content-box, padding-box;
+    background-position: right bottom, right bottom;
+    background-size: contain, cover;
+  }
+
+.TodoList {
+    line-height: 1.5rem;
+}
+
+header {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    border-width: 1px;
+    border-color: hsl(0, 0%, 80%); /* light gray */
+    border-bottom-style: solid;
+}
+
+.list button,
+header {
+    margin-left: 0.75rem;
+    margin-right: 0.75rem;
+}
+
+h1 {
+    font-size: 1rem;
+    font-weight: normal;
+    margin-left: 1.5rem;
+    margin-bottom: 0.25rem;
+}
+
+form[name="adder"] input,
+form[name="adder"] button {
+    border-width: 1px;
+    border-style: solid;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+form[name="adder"] input {
+    border-top-left-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+}
+
+button {
+    width: 5rem;
+    border-color: hsl(0, 0%, 50%); /* gray */
+}
+
+input + button {
+    border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+    margin-left: 0.5rem;
+}
+
+form[name="adder"] button {
+    border-color: hsl(165, 100%, 25%);
+}
+
+input[type="text"] {
+    border-color: hsl(0, 0%, 80%); /* light gray */
+}
+
+ul {
+    margin-left: 0.75rem;
+    padding-top: 0.75rem;
+    line-height: 1.5rem;
+    list-style: none;
+}
+
+li {
+    cursor: default;
+}
+
+li div {
+    display: flex;
+    align-items: baseline;
+}
+
+li p {
+    max-width: 24em;
+    flex-grow: 1;
+    flex-shrink: 1;
+    margin-left: 1rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+li button {
+    flex-grow: 0;
+    flex-shrink: 0;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 0.25rem;
+    font-family: inherit;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    margin-left: 0.5rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    color: hsl(15, 100%, 60%); /* red-ish */
+    border-color: hsl(15, 100%, 60%); /* red-ish */
+    background-color: hsl(15, 100%, 95%); /* light red-ish */
+}
+
+form[name="adder"] button,
+form[name="adder"] input,
+li.uncompleted:hover {
+    background-color: hsl(165, 100%, 95%); /* light green-ish */
+}
+
+li.completed:hover {
+    background-color: hsl(0, 0%, 95%); /* ligher gray */
+}
+
+form[name="adder"] input,
+form[name="adder"] button,
+li.uncompleted {
+    color: hsl(165, 100%, 25%); /* green-ish */
+}
+
+li.completed {
+    color: hsl(0, 0%, 80%); /* light gray */
+}
+
+form[name="adder"] {
+    display: flex;
+    line-height: 1.5em;
+}
+
+form[name="adder"] input,
+form[name="adder"] button {
+    color: hsl(165, 100%, 25%); /* green-ish */
+    background-color: hsl(165, 100%, 95%);
+}
+
+form[name="adder"] input {
+    flex-grow: 1;
+    flex-shrink: 1;
+    max-width: 24em;
+    margin-left: 1rem;
+    padding-left: 0.5em;
+}
+
+form[name="adder"] button {
+    flex-grow: 0;
+    flex-shrink: 0;
+}
