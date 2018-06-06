@@ -8,7 +8,7 @@ export const fetchDeletePurchase = (id: number) =>
 export const fetchGetProduct = (productId: number): Promise<Product> =>
     fetch(`/products/${productId}`).then(response => {
         if (!response.ok) {
-            throw new Error(`getProducts status=${response.status}`)
+            throw new Error(`getProduct status=${response.status}`)
         }
 
         return response.json()

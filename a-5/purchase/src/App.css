@@ -136,3 +136,20 @@ td button {
   border-color: hsl(15, 100%, 60%); /* red-ish */
   background-color: hsl(15, 100%, 95%); /* light red-ish */
 }
+
+#root {
+  position: relative;
+}
+
+.modalBox {
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 1em;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 10em;
+  height: 100%;
+  color: #ffff00; /* yellow */
+  background-color: hsla(0, 0%, 0%, 0.5); /* 50% black */
+}

@@ -24,6 +24,8 @@ In a Terminal window:
 
 3. In Terminal: `npm install --global create-react-app`
 
+4. Go to [https://reactjs.org/community/debugging-tools.html](https://reactjs.org/community/debugging-tools.html) and then follow the link to install React Developer Tools extension for Chrome browser
+
 ## Create an application to purchase products
 
 1. Change to the your **working** directory in which you edit a copy of practice files
@@ -493,4 +495,70 @@ Will another volunteer say why `PostablePurchase` interface differs from `Purcha
 
 2. Other person: add a pure `prependPurchase` function to the `a-5-purchase/src/logic.ts` file
 
-3. Both together: add a `src/PurchaseForm.tsx` file:
+## sort purchases in reverse order
+
+Will a volunteer say why did we prepend instead of append.
+
+Will another volunteer say in which order the purchases are in response to initial `GET` request.
+
+**Both together**: In the `a-5-purchase/src/fetch.ts` file, add a `then` method to sort the purchases in reverse order by id. For more information search for `sort` method on Mozilla Developer Network.
+
+## stretch goal
+
+Add a `PurchaseForm` component, so customer can:
+
+1. Type a PLU code, and then click the `Enter` button. Get the product, and then display the description.
+2. Type a quantity, and then click the `OK` or `Cancel` button. Post the purchase.
+
+Will a volunteer say whether it will be a function or class component, and why.
+
+**Both together**:
+
+1. In a new `a-5-purchase/src/PurchaseForm.tsx` file:
+    * Declare in `Props` type: `onSubmit` callback function (what is its input and output)
+    * Declare as `State` type:
+        ```js
+        type State = {
+            valueCode: string
+            isCodeReady: boolean
+            productId: number | null
+            isGettingProduct: boolean
+            product: Product | null
+            valueQuantity: string
+            isQuantityReady: boolean
+            isPostingPurchase: boolean
+        }
+        ```
+    * In `render` method, return any of the following HTML elements: `form`, `fieldset`, `label`, `input`, button
+    * Define methods: `onSubmitCode`, `onSubmitQuantity`, `onCancelQuantity`
+
+2. In the `a-5-purchase/src/App.tsx` file, add an `onPrepend` method and add component to `render` method:
+    ```js
+    return (
+        <>
+            <PurchaseForm onSubmit={this.onPrepend} />
+            <PurchaseTable onRemove={this.onRemove} purchases={purchases} waiting={isGettingPurchases} />
+        </>
+    )
+    ```
+
+## composition
+
+> Some components don’t know their children ahead of time. This is especially common for components like Sidebar or Dialog that represent generic boxes. We recommend that such components use the special `children` prop.
+
+Let’s add a generic modal box whose specific child displays choices if a customer orders more of a product:
+
+* Add both quantities
+* Keep only the previous quantity
+* Keep only the new quantity
+
+**Both together**:
+
+1. In the `a-5-purchase/src/PurchaseForm.tsx`file:
+    * In submit quantity method, find a previous purchase (if any) using a new `purchases` prop
+    * If there is a previous purchase, set a new property in state
+    * In `render` method, if new property is truthy, then display `ConfirmMultiple` element as a child of `ModalBox` element following the `form` elements
+
+2. In the `a-5-purchase/src/App.tsx` file, add to `PurchaseForm` element `onRemove` and `purchases` props
+
+**Bonus**: Read [Composition vs Inheritance](https://reactjs.org/docs/composition-vs-inheritance.html)
