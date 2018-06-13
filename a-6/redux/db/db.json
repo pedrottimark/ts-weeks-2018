@@ -1,0 +1,9 @@
+{
+  "theme": {
+    "className": "teal"
+  },
+  "visibility": {
+    "maxOrder": 8,
+    "maxOrderVisible": 0
+  }
+}

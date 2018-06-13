@@ -1,0 +1,80 @@
+header,
+main {
+  width: 100%;
+}
+
+header {
+  display: flex;
+  justify-content: flex-end;
+}
+
+header .visibility {
+  font-size: 1rem;
+  flex-grow: 0;
+  margin-right: 0.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.visibility label {
+  margin-right: 0.5em;
+}
+
+.visibility button {
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+
+.visibility button {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  border-radius: 0.25em;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #CCCCCC
+}
+
+.visibility span {
+  margin-left: 0.5em;
+  padding-left: 0.5em;
+  width: 3rem;
+  text-align: right;
+  padding-right: 0.5em;
+  margin-right: 0.5em;
+}
+
+/*
+.margin {
+  margin: 1.5rem;
+}
+*/
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+li,
+p {
+  background-color: hsl(60, 100%, 95%);
+}
+
+.green {
+  color: hsl(120, 50%, 50%);
+}
+
+.teal {
+  color: hsl(180, 100%, 40%);
+}
+
+.blue {
+  color: hsl(240, 100%, 50%);
+}
