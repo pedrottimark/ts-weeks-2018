@@ -179,6 +179,19 @@ export function createStore(reducer, initialState) {
     * Add `Promise.all` for the two fetch functions
     * Move the existing `this.props.initializeVisibility` and `this.props.setTheme` function calls into `then` method with the returned object arguments `theme` and `visibility` instead of the hard-coded literal objects (find the example in `a-4` files :)
 
+##3 theme challenge
+
+For a bonus challenge, add a `ThemeFieldset` component which consists of radio buttons to select theme: `green`, `teal`, or `blue`
+
+### fetching challenge
+
+Add a `fetching` prop to state:
+* Add an action to set and clear in `actions.ts` file
+* Add a `fetching.ts` file in `reducers` subdirectory
+* Add to `index.ts` in `reducers` subdirectory
+* Call action creator to set before `Promise.all` and to clear in `then` method
+* Use `fetching` prop as value of `disabled` prop in the `button` and `input` elements
+
 ## glamorous
 
 Let’s watch [A Unified Styling Language](https://www.youtube.com/watch?v=X_uTCnaRe94) by Mark Dalgleish (29 minutes)
