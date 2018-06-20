@@ -9,4 +9,4 @@
 | 5 | 06-06 | 08-08 | React, part 1 |
 | 6 | 06-13 | 08-15 | React, part 2: Redux and glamorous |
 | 7 | 06-20 | 08-22 | React, part 3: React Router and Redux Form |
-| 8 | 06-27 | 08-29 | to be announced :) |
+| 8 | 06-27 | 08-29 | Hackathon |
