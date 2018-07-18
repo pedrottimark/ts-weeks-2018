@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`object destructuring renders an item with HTML entity references 1`] = `
+<li
+  class="uncompleted"
+>
+  &lt;script src="do-do.js"&gt;&lt;/script&gt;
+</li>
+`;
+
+exports[`object destructuring renders an item with completed property false 1`] = `
+<li
+  class="uncompleted"
+>
+  Just do it!
+</li>
+`;
+
+exports[`object destructuring renders an item with completed property true 1`] = `
+<li
+  class="completed"
+>
+  I done it.
+</li>
+`;
