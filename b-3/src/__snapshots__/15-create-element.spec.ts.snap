@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`createElement escapes angle brackets in text 1`] = `
+<li>
+  &lt;script src="do-do.js"&gt;&lt;/script&gt;
+</li>
+`;
+
+exports[`createElement represents an element with number as child 1`] = `
+<td>
+  17
+</td>
+`;
+
+exports[`createElement represents an element with text and elements as children 1`] = `
+<li>
+  Just
+  <strong>
+    do
+  </strong>
+   it!
+</li>
+`;
+
+exports[`createElement represents an empty element with no props 1`] = `<br />`;
+
+exports[`createElement represents an empty element with two props 1`] = `
+<img
+  src="pretty.jpeg"
+  title="pretty picture"
+/>
+`;

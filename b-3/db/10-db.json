@@ -1,0 +1,25 @@
+{
+    "nouns": [
+        {
+            "id": "thing",
+            "suffix": "s"
+        },
+        {
+            "id": "sheep",
+            "suffix": ""
+        },
+        {
+            "id": "ox",
+            "suffix": "en"
+        },
+        {
+            "id": "inch",
+            "suffix": "es"
+        },
+        {
+            "id": "goose",
+            "plural": "geese"
+        }
+
+    ]
+}

@@ -1,0 +1,57 @@
+{
+    "name": "a-3",
+    "version": "1.0.0",
+    "private": true,
+    "description": "TypeScript",
+    "license": "MIT",
+    "scripts": {
+        "compile": "tsc --outDir ./lib --alwaysStrict --target ES2015",
+        "lint": "tslint",
+        "prettier": "prettier --write",
+        "start": "json-server --static ./lib",
+        "test": "jest"
+    },
+    "babel": {
+        "plugins": [
+            "transform-es2015-modules-commonjs",
+            "transform-object-rest-spread"
+        ]
+    },
+    "prettier": {
+        "semi": false,
+        "tabWidth": 4,
+        "printWidth": 120,
+        "singleQuote": true
+    },
+    "jest": {
+        "moduleFileExtensions": [
+            "ts",
+            "tsx",
+            "js",
+            "jsx",
+            "json",
+            "node"
+        ],
+        "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(js|tsx?)$",
+        "transform": {
+            "^.+\\.jsx?$": "babel-jest",
+            "^.+\\.tsx?$": "ts-jest"
+        }
+    },
+    "devDependencies": {
+        "@types/jest": "23.3.0",
+        "babel-core": "6.26.3",
+        "babel-jest": "23.4.0",
+        "babel-plugin-transform-es2015-modules-commonjs": "6.26.2",
+        "babel-plugin-transform-object-rest-spread": "6.26.0",
+        "jest": "23.4.1",
+        "json-server": "0.14.0",
+        "prettier": "1.13.7",
+        "ts-jest": "23.0.1",
+        "tslint": "5.11.0",
+        "typescript": "2.9.0"
+    },
+    "dependencies": {
+        "react": "16.4.1"
+    }
+}
