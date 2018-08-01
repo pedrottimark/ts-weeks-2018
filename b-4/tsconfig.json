@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+        "alwaysStrict": true,
+        "outDir": "./lib",
+        "target": "ES2017"
+    },
+    "exclude": [
+        "lib",
+        "node_modules"
+    ]
+}

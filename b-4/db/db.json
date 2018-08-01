@@ -1,0 +1,72 @@
+{
+  "doers": [
+    {
+      "id": "larry",
+      "name": "Larry Fine"
+    },
+    {
+      "id": "moe",
+      "name": "Moe Howard"
+    },
+    {
+      "id": "curly",
+      "name": "Curly Howard"
+    }
+  ],
+  "items": [
+    {
+      "completed": true,
+      "doerId": "larry",
+      "text": "Leave him alone!",
+      "id": 1
+    },
+    {
+      "completed": false,
+      "doerId": "larry",
+      "text": "Hey cut the clownin’",
+      "id": 2
+    },
+    {
+      "completed": false,
+      "doerId": "larry",
+      "text": "I didn’t wanna say yes, but I couldn’t say no.",
+      "id": 3
+    },
+    {
+      "completed": false,
+      "doerId": "moe",
+      "text": "Pick out two.",
+      "id": 4
+    },
+    {
+      "completed": true,
+      "doerId": "moe",
+      "text": "Take your time but hurry up!",
+      "id": 5
+    },
+    {
+      "completed": false,
+      "doerId": "moe",
+      "text": "What's the big idea here?",
+      "id": 6
+    },
+    {
+      "completed": false,
+      "doerId": "curly",
+      "text": "Say a few syllables!",
+      "id": 7
+    },
+    {
+      "completed": false,
+      "doerId": "curly",
+      "text": "Oh, a wise guy, eh?",
+      "id": 8
+    },
+    {
+      "completed": true,
+      "doerId": "curly",
+      "text": "Soitenly!",
+      "id": 9
+    }
+  ]
+}
