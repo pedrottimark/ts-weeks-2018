@@ -1,0 +1,68 @@
+h1 {
+    font-size: 1rem;
+    padding: 1.5rem;
+    background-color: #dddddd;
+}
+
+main {
+    padding-top: 1.5rem;
+    padding-right: 1.5rem;
+    padding-bottom: 1.5rem;
+    background-color: hsl(30, 100%, 90%);
+}
+
+section {
+    display: inline-block;
+    padding-top: 1.5rem;
+    padding-right: 1.5rem;
+    padding-bottom: 1.5rem;
+    margin-left: 1.5rem;
+    border-radius: 0.25rem;
+}
+
+section:nth-child(1) {
+    background-color: hsl(210, 100%, 90%);
+}
+
+section:nth-child(2) {
+    background-color: hsl(60, 100%, 90%);
+}
+
+span {
+    display: inline-block;
+    margin-left: 1.5rem;
+    width: 4rem;
+    padding-right: 0.25rem;
+    text-align: right;
+    background-color: #ffffff;
+    border-radius: 0.25rem;
+}
+
+button {
+    margin-left: 1.5rem;
+    width: 8rem;
+    text-align: center;
+    line-height: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    border-color: #cccccc;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 0.25rem;
+}
+
+button:nth-child(1) {
+    background-color: hsl(90, 100%, 90%);
+}
+
+button:nth-child(1):hover {
+    background-color: hsl(90, 100%, 80%);
+}
+
+button:nth-child(2) {
+    background-color: hsl(270, 100%, 95%);
+}
+
+button:nth-child(2):hover {
+    background-color: hsl(270, 100%, 90%);
+}

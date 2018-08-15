@@ -1,0 +1,175 @@
+header {
+  position: fixed;
+  height: 1.5rem;
+  background-color: #ffffff;
+}
+
+header p {
+  font-weight: bold;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+main {
+  width: 61.5rem;
+}
+
+footer {
+  display: flex;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 48rem;
+  align-items: flex-end;
+}
+
+footer div {
+  flex-grow: 1;
+  flex-shrink: 0;
+  text-align: right;
+  padding-left: 0.5rem;
+  padding-bottom: 4rem;
+}
+
+footer a {
+  color: inherit;
+}
+
+footer img {
+  flex-grow: 0;
+  flex-shrink: 0;
+  width: 300px;
+  height: 313px;
+}
+
+main.error + footer img {
+  transform: rotate(90deg);
+  transform-origin: 150px 200px;
+}
+
+ul.portions {
+  position: fixed;
+  top: 1.5rem;
+  width: 48rem;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #ffffff;
+}
+
+ul.foods {
+  margin-top: 1.5rem;
+  margin-left: 48rem;
+  border-left-style: solid;
+  border-width: 1px;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  background-color: hsl(200, 66%, 88%);
+}
+
+ul.portions li {
+  width: 12rem; /* 4 portions per table row */
+}
+
+ul.portions span:first-child {
+  padding-left: 0.5rem;
+}
+
+ul.foods button {
+  outline: none;
+  background-color: inherit;
+}
+
+ul.foods button {
+  width: 13.5rem;
+  padding-left: 1.5rem;
+  text-align: left;
+}
+
+ul.portions li:not(.disabled) div:hover span + span,
+form[name="portion"] button:not(:disabled):hover,
+form[name="portion"] input,
+form[name="portion"] button,
+ul.foods li:not(.disabled) button:hover {
+  color: #ffffff;
+  background-color: hsl(205, 58%, 54%);
+}
+
+ul.foods {
+  border-color: hsl(205, 58%, 54%);
+}
+
+ul.foods li:not(.disabled) button:hover {
+  background-image: url("plus.svg");
+  background-repeat: no-repeat;
+}
+
+form[name="portion"] input:disabled,
+form[name="portion"] button:disabled {
+  color: hsl(205, 58%, 80%);
+}
+
+ul.portions li.disabled span,
+ul.foods li.disabled button {
+  color: #808080;
+}
+
+.limit,
+.avoid {
+  font-style: italic;
+}
+
+.avoid {
+  text-decoration: line-through;
+}
+
+form[name="portion"] input,
+form[name="portion"] button,
+ul.portions span + span {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+
+ul.portions span {
+  display: inline-block; /* so hover background-color has line-height */
+  cursor: default;
+}
+
+ul.portions span + span {
+  position: relative;
+  margin-left: 0.5rem;
+}
+
+form[name="portion"] {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0px;
+  width: 6rem;
+  background-color: #cccccc;
+}
+
+ul.portions div {
+  display: inline-block; /* limit width to hover only if pointing at spans */
+}
+
+form[name="portion"] input,
+form[name="portion"] button {
+  width: 100%;
+}
+
+form[name="portion"] button {
+  text-align: left;
+}
+
+input,
+button {
+  box-sizing: border-box;
+  line-height: inherit;
+  font-family: inherit;
+  font-size: inherit;
+}
